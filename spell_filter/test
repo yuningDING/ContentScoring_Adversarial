@@ -1,0 +1,11 @@
+from hunspell import Hunspell
+import re
+
+h = Hunspell()
+
+spell = Hunspell()
+token_list = 'Some additional informtion that we would need to replicate the experiment is how much vinegar should be placed in each identical container, how or what tool to use to measure the mass of the four different samples and how much distilled water to use to rinse the four samples after taking them out of the vinegar.'.split()
+print(token_list)
+for w in token_list:
+    spell_error = spell.spell(re.sub(r'[^\w\s]','',w))
+    print(1/len(token_list)*100)
